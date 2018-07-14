@@ -9,13 +9,15 @@ public class Main {
         System.out.print("Второе значение: ? ");
         int b = scanner.nextInt();
 
-        System.out.printf("До перестановки: a = %d; b = %d;\n", a, b);
+        System.out.printf("До перестановки без доп. переменной: a = %d; b = %d;\n", a, b);
 
-        int temp = a;
-        a = b;
-        b = temp;
+        a = a + b;
+        b = a - b;
+        a = a - b;
 
-        System.out.printf("После перестановки: a = %d; b = %d;\n", a ,b);
+        System.out.printf("После перестановки без доп. переменной: a = %d; b = %d;\n", a, b);
+
+
 
     }
 }
