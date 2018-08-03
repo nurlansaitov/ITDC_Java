@@ -10,7 +10,7 @@ public class Main extends JFrame {
     void draw(Graphics2D g2) {
         // Ваш код
 
-            int screenWidthCenter = getWidth() / 2;
+
             int maxRectWidthSize = 100;
             int kolRect = 30;
             int redMinColor = 10;
@@ -18,8 +18,8 @@ public class Main extends JFrame {
             int x1 = 0;
 
             for (int k = 0; k < 20; k++) {
+                int maxRS = maxRectWidthSize;
                 for (int i = 0; i < kolRect; i++) {
-                    int maxRS = maxRectWidthSize;
                     Color myColor = new Color(redMinColor, 0, 0);
                     g2.setColor(myColor);
                     g2.fillRect(x1, 80, maxRS, 800);
