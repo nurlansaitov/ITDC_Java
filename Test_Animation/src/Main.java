@@ -13,8 +13,11 @@ public class Main extends JFrame {
     final int MOLECULE_DIAMETER = 2 * MOLECULE_RADIUS;
 
     // Ваши переменные
-    int x, y;
-    int dx = 5, dy = 5;
+    int x1, y1;
+    int x2, y2;
+
+    int dx1 = 2, dy1 = 2;
+    int dx2 = -2, dy2 = -2;
     int width, height;
 
 
@@ -22,21 +25,32 @@ public class Main extends JFrame {
         // код для инициализации
         width = getWidth();
         height = getHeight();
+        x1 = width / 2 - MOLECULE_RADIUS;
+        y1 = height / 2 - MOLECULE_RADIUS;
+        x2 = width / 2 - MOLECULE_RADIUS;
+        y2 = height / 2 - MOLECULE_RADIUS;
 
-        x = width / 2 - MOLECULE_RADIUS;
-        y = height / 2 - MOLECULE_RADIUS;
     }
 
     void update() {
         // код для обновления свойств объектов
-        x += dx;
-        y += dy;
+        x1 += dx1;
+        y1 += dy1;
+        x2 += dx2;
+        y2 += dy2;
 
-        if (x < 0 || x > width - MOLECULE_DIAMETER) {
-            dx = -dx;
+
+        if (x1 < 0 || x1 > width - MOLECULE_DIAMETER) {
+            dx1 = -dx1;
         }
-        if (y < 0 || y > height - MOLECULE_DIAMETER) {
-            dy = -dy;
+        if (y1 < 0 || y1 > height - MOLECULE_DIAMETER) {
+            dy1 = -dy1;
+        }
+        if (x2 < 0 || x2 > width - MOLECULE_DIAMETER) {
+            dx2 = -dx2;
+        }
+        if (y2 < 0 || y2 > height - MOLECULE_DIAMETER) {
+            dy2 = -dy2;
         }
 
 
@@ -46,7 +60,8 @@ public class Main extends JFrame {
 
         // код для рисования следующего кадра
         g2.setColor(MOLECULE_COLOR);
-        g2.fillOval(x,y, MOLECULE_DIAMETER, MOLECULE_DIAMETER);
+        g2.fillOval(x1,y1, MOLECULE_DIAMETER, MOLECULE_DIAMETER);
+        g2.fillOval(x2,y2, MOLECULE_DIAMETER, MOLECULE_DIAMETER);
 
 
     }
